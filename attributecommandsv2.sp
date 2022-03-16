@@ -61,7 +61,7 @@ public OnPluginStart()
 public Action:event_playerspawn(Handle:event,const String:name[],bool:dontBroadcast)
 {
 	new client = GetClientOfUserId(GetEventInt(event, "userid"));
-	PrintToChat(client, "Type !attmenu in chat to open the Attribute Menu.");
+	PrintToChat(client, "Type !attmenu in chat to open the Attribute Menu. This command is accessible to everyone!");
 }
 
 public Action:Command_RemoveAttributes(client, args)
@@ -859,12 +859,12 @@ public CommandListHandler(Handle:menu, MenuAction:action, param1, param2)
 
 stock ParticleList(client)
 {
-	ShowMOTDPanel(client, "Particle List", "http://optf2.com/440/particles",  MOTDPANEL_TYPE_URL)
+	ShowMOTDPanel(client, "Particle List", "https://tf2b.com/attriblist.php",  MOTDPANEL_TYPE_URL)
 }
 
 stock AttributeList(client)
 {
-	ShowMOTDPanel(client, "Attribute List", "http://optf2.com/440/attributes",  MOTDPANEL_TYPE_URL)
+	ShowMOTDPanel(client, "Attribute List", "https://tf2b.com/pelist.php",  MOTDPANEL_TYPE_URL)
 }
 
 stock AttGiveList(client)
