@@ -859,12 +859,12 @@ public CommandListHandler(Handle:menu, MenuAction:action, param1, param2)
 
 stock ParticleList(client)
 {
-	ShowMOTDPanel(client, "Particle List", "https://tf2b.com/attriblist.php",  MOTDPANEL_TYPE_URL)
+	ShowMOTDPanel(client, "Particle List", "https://tf2b.com/pelist.php",  MOTDPANEL_TYPE_URL)
 }
 
 stock AttributeList(client)
 {
-	ShowMOTDPanel(client, "Attribute List", "https://tf2b.com/pelist.php",  MOTDPANEL_TYPE_URL)
+	ShowMOTDPanel(client, "Attribute List", "https://wiki.teamfortress.com/wiki/List_of_item_attributes",  MOTDPANEL_TYPE_URL)
 }
 
 stock AttGiveList(client)
