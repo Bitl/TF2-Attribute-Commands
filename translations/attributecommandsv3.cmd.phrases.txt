@@ -1,0 +1,29 @@
+"Phrases"
+{
+	// ad
+	"AttCmds_V3_Ad"
+	{
+		"en"			"Type !attmenu in chat to open the Attribute Menu. This command is accessible to everyone!"
+	}
+
+	// commands
+	"AttCmds_V3_Clear"
+	{
+		"en"			"Cleared all Attributes on the active weapon. Built-in Attributes have been reset."
+	}
+
+	"AttCmds_V3_AddFloat"
+	{
+		"en"			"Added a custom Attribute value on the active weapon."
+	}
+
+	"AttCmds_V3_Remove"
+	{
+		"en"			"Removed the Attribute on the active weapon. If the Attribute is built into the weapon, it may not be removed."
+	}
+
+	"AttCmds_V3_NoActive"
+	{
+		"en"			"You don't seem to have an active weapon!"
+	}
+}

@@ -1,0 +1,155 @@
+"Phrases"
+{
+	// page 1
+	"AttCmds_V3_Projectiles_Bullet"
+	{
+		"en"			"Bullet"
+	}
+
+	"AttCmds_V3_Projectiles_Rocket"
+	{
+		"en"			"Rocket"
+	}
+
+	"AttCmds_V3_Projectiles_Pipebomb"
+	{
+		"en"			"Pipebomb"
+	}
+
+	"AttCmds_V3_Projectiles_Sticky"
+	{
+		"en"			"Stickybomb"
+	}
+
+	"AttCmds_V3_Projectiles_Syringe"
+	{
+		"en"			"Syringe"
+	}
+
+	"AttCmds_V3_Projectiles_Flare"
+	{
+		"en"			"Flare"
+	}
+
+	"AttCmds_V3_Projectiles_Jarate"
+	{
+		"en"			"Jarate Jar"
+	}
+
+	"AttCmds_V3_Projectiles_Arrow"
+	{
+		"en"			"Huntsman Arrow"
+	}
+
+	"AttCmds_V3_Projectiles_FlameRocket"
+	{
+		"en"			"Flame Rocket (?)"
+	}
+
+	"AttCmds_V3_Projectiles_MadMilk"
+	{
+		"en"			"Mad Milk Jar"
+	}
+
+	"AttCmds_V3_Projectiles_CrossbowBolt"
+	{
+		"en"			"Crusader's Crossbow Bolt"
+	}
+
+	"AttCmds_V3_Projectiles_ManglerParticle"
+	{
+		"en"			"Cow Mangler Particle"
+	}
+
+	"AttCmds_V3_Projectiles_BisonParticle"
+	{
+		"en"			"Righteous Bison Particle"
+	}
+
+	"AttCmds_V3_Projectiles_StickyPractice"
+	{
+		"en"			"Sticky Jumper Stickybomb"
+	}
+
+	// page 2
+
+	"AttCmds_V3_Projectiles_Cleaver"
+	{
+		"en"			"Flying Guillotine Cleaver"
+	}
+
+	"AttCmds_V3_Projectiles_StickyBall"
+	{
+		"en"			"Sticky Ball (?)"
+	}
+
+	"AttCmds_V3_Projectiles_Cannonball"
+	{
+		"en"			"Loose Cannon Cannonball"
+	}
+
+	"AttCmds_V3_Projectiles_RangerBolt"
+	{
+		"en"			"Rescue Ranger Bolt"
+	}
+
+	"AttCmds_V3_Projectiles_FestiveArrow"
+	{
+		"en"			"Festive Huntsman Arrow"
+	}
+
+	"AttCmds_V3_Projectiles_Throwable"
+	{
+		"en"			"Throwable (?)"
+	}
+
+	"AttCmds_V3_Projectiles_Fireball"
+	{
+		"en"			"Spell Fireball"
+	}
+
+	"AttCmds_V3_Projectiles_FestiveUrine"
+	{
+		"en"			"Festive Jarate Jar"
+	}
+
+	"AttCmds_V3_Projectiles_FestiveCrossbowBolt"
+	{
+		"en"			"Festive Crusader's Crossbow Bolt"
+	}
+
+	"AttCmds_V3_Projectiles_BeautyMark"
+	{
+		"en"			"Self Aware Beauty Mark"
+	}
+
+	"AttCmds_V3_Projectiles_MutatedMilk"
+	{
+		"en"			"Mutated Milk"
+	}
+
+	"AttCmds_V3_Projectiles_GrapplingHook"
+	{
+		"en"			"Grappling Hook"
+	}
+
+	"AttCmds_V3_Projectiles_SentryRocket"
+	{
+		"en"			"Sentry Rocket"
+	}
+
+	"AttCmds_V3_Projectiles_BreadMonster"
+	{
+		"en"			"Bread Monster"
+	}
+
+	"AttCmds_V3_Projectiles_Gas"
+	{
+		"en"			"Gas Passer Jar"
+	}
+
+	"AttCmds_V3_Projectiles_BallOfFire"
+	{
+		"en"			"Dragon's Fury Ball Of Fire"
+	}
+}

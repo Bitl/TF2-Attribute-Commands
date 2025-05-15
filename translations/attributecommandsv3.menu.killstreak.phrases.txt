@@ -1,0 +1,74 @@
+"Phrases"
+{
+	// effects
+	"AttCmds_V3_Effects_FireHorns"
+	{
+		"en"			"Fire Horns"
+	}
+
+	"AttCmds_V3_Effects_CerebralDischarge"
+	{
+		"en"			"Cerebral Discharge"
+	}
+
+	"AttCmds_V3_Effects_Tornado"
+	{
+		"en"			"Tornado"
+	}
+
+	"AttCmds_V3_Effects_Flames"
+	{
+		"en"			"Flames"
+	}
+
+	"AttCmds_V3_Effects_Singularity"
+	{
+		"en"			"Singularity"
+	}
+
+	"AttCmds_V3_Effects_Incinerator"
+	{
+		"en"			"Incinerator"
+	}
+
+	"AttCmds_V3_Effects_HypnoBeam"
+	{
+		"en"			"Hypno-Beam"
+	}
+
+	// sheens
+	"AttCmds_V3_Sheens_TeamShine"
+	{
+		"en"			"Team Shine"
+	}
+
+	"AttCmds_V3_Sheens_DeadlyDaffodil"
+	{
+		"en"			"Deadly Daffodil"
+	}
+
+	"AttCmds_V3_Sheens_Manndarin"
+	{
+		"en"			"Manndarin"
+	}
+
+	"AttCmds_V3_Sheens_MeanGreen"
+	{
+		"en"			"Mean Green"
+	}
+
+	"AttCmds_V3_Sheens_AgonizingEmerald"
+	{
+		"en"			"Agonizing Emerald"
+	}
+
+	"AttCmds_V3_Sheens_VillainousViolet"
+	{
+		"en"			"Villainous Violet"
+	}
+
+	"AttCmds_V3_Sheens_HotRod"
+	{
+		"en"			"Hot Rod"
+	}
+}

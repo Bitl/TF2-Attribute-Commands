@@ -1,0 +1,45 @@
+"Phrases"
+{
+	// attmenu
+	"AttCmds_V3_AttMenu_Title"
+	{
+		"en"			"Attribute Commands Menu"
+	}
+
+	"AttCmds_V3_AttMenu_Commands"
+	{
+		"en"			"Commands"
+	}
+
+	"AttCmds_V3_AttMenu_UnusualParticles"
+	{
+		"en"			"Unusual Particles"
+	}
+
+	"AttCmds_V3_AttMenu_KillstreakEffects"
+	{
+		"en"			"Killstreak Effects"
+	}
+
+	"AttCmds_V3_AttMenu_KillstreakSheens"
+	{
+		"en"			"Killstreak Sheens"
+	}
+
+	"AttCmds_V3_AttMenu_Projectiles"
+	{
+		"en"			"Projectiles"
+	}
+
+	// commandmenu
+	"AttCmds_V3_CommandMenu_TFWiki"
+	{
+		"en"			"You can find attribute index IDs on the TF2 Wiki."
+	}
+
+	// particlemenu
+	"AttCmds_V3_ParticleMenu_BackpackTF"
+	{
+		"en"			"You can find a full list of Unusual Particles on backpack.tf."
+	}
+}
