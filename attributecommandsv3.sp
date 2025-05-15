@@ -84,13 +84,19 @@ public Action:Command_Attribute(int client, int args)
 {
 	if (args < 2)
 	{
-		ReplyToCommand(client, "[SM] Usage: sm_attribute <#attribute index id> <#value> [value]");
+		ReplyToCommand(client, "[SM] Usage: sm_attribute <clear|add|remove> <#attribute index id> [value]");
 		return Plugin_Handled;
 	}
 
 	//declare args
 	char mode[64];
 	GetCmdArg(1, mode, sizeof(mode));
+	
+	if (!(StrEqual(mode, "clear") || StrEqual(mode, "add") || StrEqual(mode, "remove")))
+	{
+		ReplyToCommand(client, "[SM] Usage: sm_attribute <clear|add|remove> <#attribute index id> [value]");
+		return Plugin_Handled;
+	}
 	
 	new wep = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
 	
@@ -160,7 +166,7 @@ public AttributeMenuHandler(Handle:menu, MenuAction:action, client, option)
 			{
 				new Handle:commandList = CreatePanel();
 				
-				DrawPanelText(commandList, "!attribute <#attribute index id> <#value> [value]");
+				DrawPanelText(commandList, "!attribute <clear|add|remove> <#attribute index id> [value]");
 				TranslatedPanelText(commandList, client, "AttCmds_V3_CommandMenu_TFWiki");
 				DrawPanelText(commandList, "https://wiki.teamfortress.com/wiki/List_of_item_attributes");
 				
