@@ -8,7 +8,7 @@
 
 	"AttCmds_V3_AttMenu_Commands"
 	{
-		"en"			"Commands"
+		"en"			"Custom Attribute Command Info"
 	}
 
 	"AttCmds_V3_AttMenu_UnusualParticles"
@@ -31,6 +31,11 @@
 		"en"			"Projectiles"
 	}
 
+	"AttCmds_V3_AttMenu_AttributeList"
+	{
+		"en"			"Show list of applied attributes"
+	}
+
 	// commandmenu
 	"AttCmds_V3_CommandMenu_TFWiki"
 	{
@@ -41,5 +46,11 @@
 	"AttCmds_V3_ParticleMenu_BackpackTF"
 	{
 		"en"			"You can find a full list of Unusual Particles on backpack.tf."
+	}
+
+	// attribute list
+	"AttCmds_V3_AttributeList_Title"
+	{
+		"en"			"Item Attributes"
 	}
 }

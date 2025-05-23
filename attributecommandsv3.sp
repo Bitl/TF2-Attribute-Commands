@@ -1,7 +1,9 @@
 #include <sourcemod>
 #include <tf2attributes>
+#include <tf_econ_data>
 
 #define MAX_MENU_TIME 120
+#define MAX_RUNTIME_ATTRIBUTES 20
 //#define _DEBUG
 
 //Plugin Info.
@@ -152,6 +154,7 @@ public Action:Command_ATTHelpMenu(int client, int args)
 	TranslatedMenuItem(menu, "3", client, "AttCmds_V3_AttMenu_KillstreakEffects");
 	TranslatedMenuItem(menu, "4", client, "AttCmds_V3_AttMenu_KillstreakSheens");
 	TranslatedMenuItem(menu, "5", client, "AttCmds_V3_AttMenu_Projectiles");
+	TranslatedMenuItem(menu, "6", client, "AttCmds_V3_AttMenu_AttributeList");
 	SetMenuExitButton(menu, true);
 	DisplayMenu(menu, client, MENU_TIME_FOREVER);
 }
@@ -240,6 +243,36 @@ public AttributeMenuHandler(Handle:menu, MenuAction:action, client, option)
 				TranslatedPanelItem(projectileMenu, client, "Next");
 			 
 				SendPanelToClient(projectileMenu, client, ProjectilePage_Handler, MAX_MENU_TIME);
+			}
+			case 5:
+			{
+				new wep = GetEntPropEnt(client, Prop_Send, "m_hActiveWeapon");
+			
+				if (wep > 0)
+				{
+					new Handle:attributeList = CreatePanel();
+					
+					TranslatedPanelText(attributeList, client, "AttCmds_V3_AttributeList_Title");
+					
+					int attriblist[MAX_RUNTIME_ATTRIBUTES];
+					int count = TF2Attrib_ListDefIndices(wep, attriblist, sizeof(attriblist));
+					for (int i = 0; i < count && i < sizeof(attriblist); i++)
+					{
+						Address pAttrib = TF2Attrib_GetByDefIndex(wep, attriblist[i]);
+						
+						new String:attributeNameBuffer[256];
+						TF2Econ_GetAttributeName(attriblist[i], attributeNameBuffer, sizeof(attributeNameBuffer));
+						
+						float value = TF2Attrib_GetValue(pAttrib);
+						
+						new String:buffer[512];
+						Format(buffer, sizeof(buffer), "- %s (ID: %d): %6.2f", attributeNameBuffer, attriblist[i], value);
+						DrawPanelText(attributeList, buffer);  
+					}
+					
+					TranslatedPanelItem(attributeList, client, "Exit");
+					SendPanelToClient(attributeList, client, Page_Handler, MAX_MENU_TIME);
+				}
 			}
 		}
 	}
