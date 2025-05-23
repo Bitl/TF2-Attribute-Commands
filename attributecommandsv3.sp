@@ -169,6 +169,7 @@ public AttributeMenuHandler(Handle:menu, MenuAction:action, client, option)
 			{
 				new Handle:commandList = CreatePanel();
 				
+				TranslatedPanelText(commandList, client, "AttCmds_V3_AttMenu_Commands");
 				DrawPanelText(commandList, "!attribute <clear|add|remove> <#attribute index id> [value]");
 				TranslatedPanelText(commandList, client, "AttCmds_V3_CommandMenu_TFWiki");
 				DrawPanelText(commandList, "https://wiki.teamfortress.com/wiki/List_of_item_attributes");
@@ -181,6 +182,7 @@ public AttributeMenuHandler(Handle:menu, MenuAction:action, client, option)
 			{
 				new Handle:particleList = CreatePanel();
 				
+				TranslatedPanelText(particleList, client, "AttCmds_V3_AttMenu_UnusualParticles");
 				TranslatedPanelText(particleList, client, "AttCmds_V3_ParticleMenu_BackpackTF");
 				DrawPanelText(particleList, "https://backpack.tf/developer/particles");
 				
@@ -192,6 +194,7 @@ public AttributeMenuHandler(Handle:menu, MenuAction:action, client, option)
 			{
 				new Handle:killstreakEffects = CreatePanel();
 				
+				TranslatedPanelText(killstreakEffects, client, "AttCmds_V3_AttMenu_KillstreakEffects");
 				TranslatedIDPanelText(killstreakEffects, "2002", client, "AttCmds_V3_Effects_FireHorns");
 				TranslatedIDPanelText(killstreakEffects, "2003", client, "AttCmds_V3_Effects_CerebralDischarge");
 				TranslatedIDPanelText(killstreakEffects, "2004", client, "AttCmds_V3_Effects_Tornado");
@@ -208,6 +211,7 @@ public AttributeMenuHandler(Handle:menu, MenuAction:action, client, option)
 			{
 				new Handle:killstreakSheens = CreatePanel();
 				
+				TranslatedPanelText(killstreakSheens, client, "AttCmds_V3_AttMenu_KillstreakSheens");
 				TranslatedIDPanelText(killstreakSheens, "1", client, "AttCmds_V3_Sheens_TeamShine");
 				TranslatedIDPanelText(killstreakSheens, "2", client, "AttCmds_V3_Sheens_DeadlyDaffodil");
 				TranslatedIDPanelText(killstreakSheens, "3", client, "AttCmds_V3_Sheens_Manndarin");
@@ -224,6 +228,7 @@ public AttributeMenuHandler(Handle:menu, MenuAction:action, client, option)
 			{
 				new Handle:projectileMenu = CreatePanel();
 				
+				TranslatedPanelText(projectileMenu, client, "AttCmds_V3_AttMenu_Projectiles");
 				DrawPanelText(projectileMenu, "#1");
 				TranslatedIDPanelText(projectileMenu, "1", client, "AttCmds_V3_Projectiles_Bullet");
 				TranslatedIDPanelText(projectileMenu, "2", client, "AttCmds_V3_Projectiles_Rocket");
@@ -255,22 +260,63 @@ public AttributeMenuHandler(Handle:menu, MenuAction:action, client, option)
 					TranslatedPanelText(attributeList, client, "AttCmds_V3_AttributeList_Title");
 					
 					int attriblist[MAX_RUNTIME_ATTRIBUTES];
+					float valuelist[MAX_RUNTIME_ATTRIBUTES];
+					char atts[2048][512]; 
+					
 					int count = TF2Attrib_ListDefIndices(wep, attriblist, sizeof(attriblist));
+					int entVal = 0;
 					for (int i = 0; i < count && i < sizeof(attriblist); i++)
 					{
 						Address pAttrib = TF2Attrib_GetByDefIndex(wep, attriblist[i]);
 						
-						new String:attributeNameBuffer[256];
+						new String:attributeNameBuffer[128];
 						TF2Econ_GetAttributeName(attriblist[i], attributeNameBuffer, sizeof(attributeNameBuffer));
 						
 						float value = TF2Attrib_GetValue(pAttrib);
 						
-						new String:buffer[512];
+						entVal = i;
+						
+						new String:buffer[256];
 						Format(buffer, sizeof(buffer), "- %s (ID: %d): %6.2f", attributeNameBuffer, attriblist[i], value);
-						DrawPanelText(attributeList, buffer);  
+						
+						atts[i] = buffer;  
+					}
+					
+					int count_static = TF2Attrib_GetSOCAttribs(wep, attriblist, valuelist, sizeof(attriblist));
+					int socVal = 0;
+					for (int i = 0; i < count_static; i++)
+					{
+						new String:attributeNameBuffer[128];
+						TF2Econ_GetAttributeName(attriblist[i], attributeNameBuffer, sizeof(attributeNameBuffer));
+						
+						socVal = i;
+						
+						new String:buffer[256];
+						Format(buffer, sizeof(buffer), "- %s (ID: %d): %6.2f", attributeNameBuffer, attriblist[i], valuelist[i]);
+						
+						atts[entVal + (i + 1)] = buffer;
+					}
+					
+					int iDefIndex = GetEntProp(wep, Prop_Send, "m_iItemDefinitionIndex");
+					count_static = TF2Attrib_GetStaticAttribs(iDefIndex, attriblist, valuelist);
+					for (int i = 0; i < count_static; i++)
+					{
+						new String:attributeNameBuffer[128];
+						TF2Econ_GetAttributeName(attriblist[i], attributeNameBuffer, sizeof(attributeNameBuffer));
+						
+						new String:buffer[256];
+						Format(buffer, sizeof(buffer), "- %s (ID: %d): %6.2f", attributeNameBuffer, attriblist[i], valuelist[i]);
+						
+						atts[entVal + socVal + (i + 1)] = buffer;
+					}
+					
+					for (int i = 0; i < sizeof(atts); i++)
+					{
+						DrawPanelText(attributeList, atts[i]);
 					}
 					
 					TranslatedPanelItem(attributeList, client, "Exit");
+					
 					SendPanelToClient(attributeList, client, Page_Handler, MAX_MENU_TIME);
 				}
 			}
@@ -288,6 +334,7 @@ public ProjectilePage_Handler(Handle:menu, MenuAction:action, client, option)
 	{
 		new Handle:projectileMenu = CreatePanel();
 		
+		TranslatedPanelText(projectileMenu, client, "AttCmds_V3_AttMenu_Projectiles");
 		DrawPanelText(projectileMenu, "#2");
 		TranslatedIDPanelText(projectileMenu, "15", client, "AttCmds_V3_Projectiles_Cleaver");
 		TranslatedIDPanelText(projectileMenu, "16", client, "AttCmds_V3_Projectiles_StickyBall");
